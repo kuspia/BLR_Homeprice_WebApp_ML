@@ -1,4 +1,6 @@
 
+const port = process.env.PORT || 5000
+
 function getBathValue() {
   var uiBathrooms = document.getElementsByName("uiBathrooms");
   for(var i in uiBathrooms) {
@@ -65,3 +67,9 @@ function onPageLoad() {
 }
 
 window.onload = onPageLoad;
+
+
+app.listen( port , () => {
+})
+
+
