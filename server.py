@@ -3,6 +3,8 @@ import util
 
 app = Flask(__name__)
 
+app.set(  'port' , process.env.PORT || 5000)
+
 @app.route('/')
 def home():
    return render_template('app.html')
