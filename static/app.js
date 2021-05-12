@@ -1,5 +1,4 @@
 
-
 function getBathValue() {
   var uiBathrooms = document.getElementsByName("uiBathrooms");
   for(var i in uiBathrooms) {
