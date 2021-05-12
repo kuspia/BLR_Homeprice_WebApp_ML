@@ -37,7 +37,7 @@ function onClickedEstimatePrice() {
 //  var url = "/api/predict_home_price"; 
   // var url = "https://blrhomeprice.herokuapp.com/predict_home_price"
   
-   var url = "https://blrhomeprice.herokuapp.com:5000/predict_home_price"
+   var url = "https://blrhomeprice.herokuapp.com:443/predict_home_price"
   
   $.post(url, {
       total_sqft: parseFloat(sqft.value),
@@ -61,7 +61,7 @@ function onPageLoad() {
  // var url = "https://blrhomeprice.herokuapp.com/"+":"+port+"get_location_names"
  // var url = "https://blrhomeprice.herokuapp.com/"+":"+port+"/get_location_names"
  
- var url = "https://blrhomeprice.herokuapp.com:5000/get_location_names"
+ var url = "https://blrhomeprice.herokuapp.com:443/get_location_names"
   $.get(url,function(data, status) {
       console.log("got response for get_location_names request");
       if(data) {
