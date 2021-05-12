@@ -51,6 +51,9 @@ function onClickedEstimatePrice() {
   });
 }
 
+
+
+
 function onPageLoad() {
   console.log( "document loaded" );
   // var url = "http://127.0.0.1:5000/get_location_names";
@@ -61,20 +64,38 @@ function onPageLoad() {
  // var url = "https://blrhomeprice.herokuapp.com/"+":"+port+"get_location_names"
  // var url = "https://blrhomeprice.herokuapp.com/"+":"+port+"/get_location_names"
  
- var url = "https://blrhomeprice.herokuapp.com:49486/get_location_names"
-  $.get(url,function(data, status) {
-      console.log("got response for get_location_names request");
-      if(data) {
-          var locations = data.locations;
-          var uiLocations = document.getElementById("uiLocations");
-          $('#uiLocations').empty();
-          for(var i in locations) {
-              var opt = new Option(locations[i]);
-              $('#uiLocations').append(opt);
-          }
-      }
-  });
+ var newurl = "https://blrhomeprice.herokuapp.com:49486/get_location_names"
+ fetch(newurl)
+ .then(r=>r.json())
+ .then(data=>func(data))
+
+ func = (data) =>
+ {
+    var locations = data.locations;
+    var uiLocations = document.getElementById("uiLocations");
+    $('#uiLocations').empty();
+    for(var i in locations) {
+    var opt = new Option(locations[i]);
+    $('#uiLocations').append(opt);
+    }
+ }
+//   $.get(url,function(data, status) {
+//       console.log("got response for get_location_names request");
+//       if(data) {
+//           var locations = data.locations;
+//           var uiLocations = document.getElementById("uiLocations");
+//           $('#uiLocations').empty();
+//           for(var i in locations) {
+//               var opt = new Option(locations[i]);
+//               $('#uiLocations').append(opt);
+//           }
+//       }
+//   });
 }
+
+
+
+
 
 window.onload = onPageLoad;
 
