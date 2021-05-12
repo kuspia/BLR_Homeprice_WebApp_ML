@@ -1,13 +1,29 @@
+<!-- Author-Kushagra Shukla -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home Price Prediction Banglore</title>
+    <title>BLR_Homeprice_WebApp_ML</title>
     <!-- This is more or less similar to importing the module-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- To make HTTP calls we used jquery -->
 
+	<!-- the following lines are used to render css and js file when deployed on heroku-->
+
+	<!--
+
+	-->
 
 	<script src="{{ url_for('static',filename='app.js') }}"></script>
 	<link rel="stylesheet" href="{{ url_for('static',filename='app.css') }}">
+
+	<!--
+
+	<script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+
+	 -->
+
+
+
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -63,6 +79,10 @@
 
 </body>
 
+
+
+
+
 <div class="modal-icons">
     <div class="flex-container">
         <div class="flex">
@@ -70,15 +90,27 @@
                 <i class="fa fa-youtube"></i>
             </a>
         </div>
+
         <div class="flex">
-            <a href="https://github.com/kuspia" target="_blank">
-                <i class="fa fa-github"></i>
+            <a href="mailto:1kuspia@gmail.com" target="_blank">
+                <i class="fa fa-envelope"></i>
             </a>
         </div>
 
+        <div class="flex">
+            <a href="https://github.com/kuspia/BLR_Homeprice_WebApp_ML.git" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+        </div>
     </div>
 </div>
 
+
+</form>
+
+<hr style="height:2px;border-width:0;color:gray;background-color:white">
+
+Designed and Developed by ~kuspia [Prediction is done using ML]
 </html>
 
 
