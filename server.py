@@ -6,10 +6,7 @@ import json
 import numpy as np
 
 
-locations = []
-locations.append('1st block jayanagar')
-locations.append('1st phase jp nagar')
-
+locations = None
 data_columns = None
 model = None
 
