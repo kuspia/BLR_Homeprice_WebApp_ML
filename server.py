@@ -82,4 +82,4 @@ def predict_home_price():
 if __name__ == "__main__":
     print("Starting Python Flask For Home Price Prediction...")
     load_saved_artifacts()
-    app.run(port=5000)
+    app.run()
