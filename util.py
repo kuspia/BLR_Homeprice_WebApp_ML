@@ -26,13 +26,10 @@ def load_saved_artifacts():
     print("loading saved artifacts...start")
     global  __data_columns #will be used as a list
     global __locations #will be used as a list
-    
-    try:
-        with open("home.json", "r") as f:
-            __data_columns = json.load(f)['data_columns']
-            __locations = __data_columns[3:]  # first 3 columns are sqft, bath, bhk so we ignore them and take only the locations
-    except:
-        __data_columns=['abcd']
+
+    with open("home.json", "r") as f:
+        __data_columns = json.load(f)['data_columns']
+        __locations = __data_columns[3:]  # first 3 columns are sqft, bath, bhk so we ignore them and take only the locations
 
     global __model
     if __model is None:
