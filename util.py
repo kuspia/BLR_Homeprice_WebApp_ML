@@ -1,3 +1,4 @@
+#Author-Kushagra Shukla
 import pickle
 import json
 import numpy as np
@@ -25,10 +26,13 @@ def load_saved_artifacts():
     print("loading saved artifacts...start")
     global  __data_columns #will be used as a list
     global __locations #will be used as a list
-
-    with open("home.json", "r") as f:
-        __data_columns = json.load(f)['data_columns']
-        __locations = __data_columns[3:]  # first 3 columns are sqft, bath, bhk so we ignore them and take only the locations
+    
+    try:
+        with open("home.json", "r") as f:
+            __data_columns = json.load(f)['data_columns']
+            __locations = __data_columns[3:]  # first 3 columns are sqft, bath, bhk so we ignore them and take only the locations
+    except:
+        __data_columns=['abcd']
 
     global __model
     if __model is None:
@@ -44,8 +48,3 @@ def get_data_columns():
 
 if __name__ == '__main__':
     load_saved_artifacts()
-    print(get_location_names())
-    print(get_estimated_price('1st Phase JP Nagar',1000, 3, 3))
-    print(get_estimated_price('1st Phase JP Nagar', 1000, 2, 2))
-    print(get_estimated_price('Kalhalli', 1000, 2, 2))
-    print(get_estimated_price('Ejipura', 1000, 2, 2))
