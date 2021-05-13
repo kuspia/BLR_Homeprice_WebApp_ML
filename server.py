@@ -5,7 +5,11 @@ import util
 app = Flask(__name__)
 @app.route('/')
 def home():
-   return render_template('app.html')
+   try:
+      with open("home.json", "r") as f:
+          pass
+   except:
+      return render_template('app.html')
 
 
 @app.route('/get_location_names', methods=['GET']) #Routine to get location names
