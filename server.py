@@ -6,7 +6,10 @@ import json
 import numpy as np
 
 
-locations = None
+locations = []
+locations.append('zduygfvg')
+locations.append('zduygfvgrgtefwd')
+
 data_columns = None
 model = None
 
