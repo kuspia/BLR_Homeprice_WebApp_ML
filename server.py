@@ -7,8 +7,8 @@ import numpy as np
 
 
 locations = []
-locations.append('zduygfvg')
-locations.append('zduygfvgrgtefwd')
+locations.append('1st block jayanagar')
+locations.append('1st phase jp nagar')
 
 data_columns = None
 model = None
