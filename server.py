@@ -30,7 +30,7 @@ def load_saved_artifacts():
     global data_columns #will be used as a list
     global locations #will be used as a list
 
-    with open("./static/home.json", "r") as f:
+    with open("home.json", "r") as f:
         data_columns = json.load(f)['data_columns']
         locations = data_columns[3:]  # first 3 columns are sqft, bath, bhk so we ignore them and take only the locations
 
