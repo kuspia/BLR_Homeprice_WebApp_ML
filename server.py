@@ -2,10 +2,17 @@
 from flask import Flask, request, jsonify , render_template
 import util
 
+import json
+
 app = Flask(__name__)
 @app.route('/')
 def home():
-   return render_template('app.html')
+    try:
+        with open("home.json", "r") as f:
+            __data_columns = json.load(f)['data_columns']
+        print('HGDFS')
+    except:
+        return render_template('app.html')
 
 
 @app.route('/get_location_names', methods=['GET']) #Routine to get location names
