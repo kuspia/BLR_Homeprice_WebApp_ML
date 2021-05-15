@@ -27,13 +27,15 @@ def load_saved_artifacts():
     global  __data_columns #will be used as a list
     global __locations #will be used as a list
 
-    with open("home.json", "r") as f:
+    json_path=os.path.join(app.root_path,'home.json')
+    with open(json_path, "r") as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]  # first 3 columns are sqft, bath, bhk so we ignore them and take only the locations
 
     global __model
+    pickle_path=os.path.join(app.root_path,'home.pickle')
     if __model is None:
-        with open('home.pickle', 'rb') as f:
+        with open(pickle_path, 'rb') as f:
             __model = pickle.load(f)
     print("loading saved artifacts...done")
 
