@@ -1,5 +1,4 @@
 Visit the website from the given link below:
 
-https://blrhomeprice.herokuapp.com/
-
+https://findhomeprice.herokuapp.com/
 
